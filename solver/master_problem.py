@@ -6,9 +6,12 @@ from gurobipy import GRB
 
 class MasterProblem:
 
-    def __init__(self, data):
+    def __init__(self, data, coefficient="critical"):
 
         self.data = data
+        if coefficient not in {"global", "nogood", "critical"}:
+            raise ValueError(f"Unknown value-function coefficient: {coefficient}")
+        self.coefficient = coefficient
 
         self.model = gp.Model("MasterProblem")
         self.model.Params.OutputFlag = 0
@@ -47,6 +50,9 @@ class MasterProblem:
     def solve(self):
 
         self.model.optimize()
+        self.status = self.model.Status
+        if self.status != GRB.OPTIMAL:
+            return None, None
 
         x_val = {i: self.x[i].X for i in self.data.I}
 
@@ -64,10 +70,14 @@ class MasterProblem:
             r_val = r_star
             revenue = float(np.sum(data.demand_weight * r_val))
 
-        # # Alternative outer coefficients for ablation experiments
-        # # Basic no-good coefficient: M(y) = phi(y)
-        # penalty_expr = revenue * gp.quicksum(self.x[int(i)] for i in hat_y)
-        # return penalty_expr >= revenue - data.target_coverage
+        if self.coefficient == "global":
+            global_bound = float(np.sum(data.demand_weight))
+            penalty_expr = global_bound * gp.quicksum(self.x[int(i)] for i in hat_y)
+            return penalty_expr >= revenue - data.target_coverage
+
+        if self.coefficient == "nogood":
+            penalty_expr = revenue * gp.quicksum(self.x[int(i)] for i in hat_y)
+            return penalty_expr >= revenue - data.target_coverage
 
         tol = 1e-5  # tolerance for critical-facility identification
         penalty_terms = []

@@ -219,6 +219,9 @@ class SubProblem:
     def solve(self):
 
         self.model.optimize(SubProblem.benders_callback)
+        self.status = self.model.Status
+        if self.status != GRB.OPTIMAL:
+            return None, None, None
         y_array = np.array([self.y[i].X for i in self.data.I])
         return y_array, self.theta.X, self.model.ObjVal
 
@@ -275,6 +278,9 @@ class SubProblemOri:
     def solve(self):
 
         self.model_ori.optimize()
+        self.status = self.model_ori.Status
+        if self.status != GRB.OPTIMAL:
+            return None, None, None
         y_array = np.array([self.y_ori[i].X for i in self.data.I])
         r_array = np.array([self.r[j].X for j in self.data.J])
         return y_array, r_array, self.model_ori.ObjVal

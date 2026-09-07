@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "pybind11>=3.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bilevel-mmclbp"
+version = "0.1.0"
+description = "Replication code for the Max--Min Covering Location Blocker Problem"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gurobipy>=13.0,<14.0",
+    "numpy>=1.24",
+    "openpyxl>=3.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
