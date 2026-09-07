@@ -1,12 +1,16 @@
-# Bilevel-MMCLBP replication package
+# Documentation
 
-This page is a concise entry point for the replication materials accompanying
-the Max--Min Covering Location Blocker Problem study.
+This documentation describes how to install, validate, and reproduce the
+computational results in the accompanying MMCLBP study.
 
-- [Installation and quick start](../README.md#install)
-- [Reproducibility guide](reproducibility.md)
-- [Virginia Beach data notes](../data/virginia_beach/README.md)
+| Topic | Contents |
+| --- | --- |
+| [Installation](installation.md) | Software requirements, Gurobi, and C++ compilation |
+| [Inputs and outputs](input_output.md) | CLI arguments, parameters, status fields, and CSV schema |
+| [Synthetic instances](synthetic_instances.md) | Generator, seeds, and benchmark design |
+| [Replication](replication.md) | Commands that regenerate result CSV files and tables |
+| [Virginia Beach](virginia_beach.md) | Data provenance and the case-study workflow |
+| [Validation](validation.md) | Automated tests and expected values |
 
-The package includes the source code, the data required by the included case
-study, automated exactness tests, and scripts that write machine-readable
-experiment results.
+Start with [installation](installation.md), run the [validation](validation.md)
+checks, and then select the required replication workflow.
