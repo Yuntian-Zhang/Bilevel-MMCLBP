@@ -17,6 +17,7 @@ def main():
     parser.add_argument("benders", type=int, choices=[0, 1])
     parser.add_argument("seed", type=int)
     parser.add_argument("--degeneracy", type=int, choices=[0, 1], default=0)
+    parser.add_argument("--coefficient", choices=["global", "nogood", "critical"], default="critical")
     parser.add_argument("--timelimit", type=float, default=3600)
     args = parser.parse_args()
     if args.degeneracy == 1 and args.benders == 0:
@@ -66,6 +67,7 @@ def main():
             params = {
                 "Benders": use_benders,
                 "Degeneracy": args.degeneracy,
+                "Coefficient": args.coefficient,
                 "TimeLimit": args.timelimit
             }
             solver = BilevelSolver(data, params=params)

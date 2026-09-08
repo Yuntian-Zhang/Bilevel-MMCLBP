@@ -1,6 +1,8 @@
 import time
 import math
 
+from gurobipy import GRB
+
 from solver.master_problem import MasterProblem
 from solver.sub_problem import SubProblem, SubProblemOri
 
@@ -41,7 +43,7 @@ class BilevelSolver:
         else:
             self.subproblem = SubProblemOri(data, self.data.bigM, self.params)
 
-        self.master = MasterProblem(data)
+        self.master = MasterProblem(data, self.params.get("Coefficient", "critical"))
 
         self.tol = 1e-6
 
@@ -66,6 +68,7 @@ class BilevelSolver:
     def solve(self):
 
         start_time = time.time()
+        self._start_time = start_time
 
         while True:
 
@@ -91,6 +94,9 @@ class BilevelSolver:
 
             self._update_best_bound()
 
+            if self.master.status != GRB.OPTIMAL:
+                return self._return_after_solver_stop(self.master.status)
+
             elapsed = time.time() - start_time
 
             if elapsed >= self.time_limit:
@@ -115,6 +121,9 @@ class BilevelSolver:
             t1 = time.time()
             self.subproblem_time += t1 - t0
             self.subp_count += 1
+
+            if self.subproblem.status != GRB.OPTIMAL:
+                return self._return_after_solver_stop(self.subproblem.status)
 
             elapsed = time.time() - start_time
 
@@ -181,6 +190,13 @@ class BilevelSolver:
             return True
         else:
             return False
+
+    def _return_after_solver_stop(self, solver_status):
+
+        self.total_time = time.time() - self._start_time
+        self.status = "TimeLimit" if solver_status == GRB.TIME_LIMIT else f"SolverStatus_{solver_status}"
+        self._record_bound_and_gap()
+        return self._return_incumbent_or_dummy()
 
     def _record_bound_and_gap(self):
 

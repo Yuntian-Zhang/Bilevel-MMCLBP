@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv*/
+
+# Native-extension build products
+build/
+dist/
+*.egg-info/
+*.so
+*.dylib
+*.dll
+
+# Generated experiment output (reference results under results/ are versioned)
+results/generated/
+
+# Editor and operating-system files
+.DS_Store
+.vscode/
+.idea/
