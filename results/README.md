@@ -1,9 +1,5 @@
-# Generated results
+# Results Directory
 
-Experiment scripts write timestamped CSV files into `results/generated/`.
-That directory is intentionally ignored by Git: it can contain large,
-machine-specific outputs and is regenerated from the scripts and seeds.
+This folder contains the raw output data for the IJOC paper.
 
-Before an archival release, retain one validated set of raw CSV outputs and
-commit it in a clearly named subdirectory together with the environment and
-hardware details used to create it.
+- **Code version**: `419fe93` (commit hash)
