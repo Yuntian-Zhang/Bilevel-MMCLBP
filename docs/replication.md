@@ -46,8 +46,6 @@ See [Virginia Beach](virginia_beach.md) for data and parameter details.
 
 ## From raw CSV to manuscript tables
 
-The raw result CSVs contain all inputs, solution status, objective, bound, gap,
+The [raw result CSVs](results.md) contain all inputs, solution status, objective, bound, gap,
 time, and Benders statistics. They are designed to be aggregated directly into
-the manuscript tables with a spreadsheet or a statistical script. Keep a
-validated raw-output snapshot with the hardware and solver versions before an
-archival release.
+the manuscript tables with a spreadsheet or a statistical script.

@@ -22,7 +22,7 @@ synthetic generator with:
 Run the case study with:
 
 ```bash
-python3 scripts/reproduce_virginia_beach.py --timelimit 3600
+python3 scripts/reproduce_virginia_beach.py --timelimit 7200
 ```
 
 The script first obtains the unblocked follower value with the exact
