@@ -20,7 +20,7 @@ Optional inputs:
 
 | Option | Default | Meaning |
 | --- | --- | --- |
-| `--coefficient` | `critical` | Outer value-function coefficient: `global`, `nogood`, or `critical` |
+| `--coefficient` | `critical` | Interdiction-cut coefficient of the outer decomposition: `global`, `nogood`, or `critical` |
 | `--degeneracy` | `0` | Add the alternative dual-degeneracy cut when using Benders |
 | `--timelimit` | `3600` | Global wall-clock limit in seconds |
 

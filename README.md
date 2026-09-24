@@ -1,20 +1,34 @@
 # Bilevel-MMCLBP
 
 Replication code for *An Exact Algorithm for the Max--Min Covering Location
-Blocker Problem* by Yun-Tian Zhang, Fabio Furini, Ivana Ljubić, and Chen Chen.
-The package contains the exact value-function algorithm, its direct-MILP and
-closed-form Benders follower variants, synthetic-instance generators, and the
-Virginia Beach case-study workflow.
+Blocker Problem* by Yun-Tian Zhang, Chen Chen, Fabio Furini, and Ivana Ljubić.
+The paper is available on arXiv:
+[arXiv:2609.28084](https://arxiv.org/abs/2609.28084).
+
+The package contains the exact algorithm `OD+B&BC`, an outer decomposition
+with interdiction cuts whose follower problem is solved by a branch-and-Benders-cut
+algorithm with closed-form separation, together with the `OD+MILP` variant,
+in which the follower is solved directly as an MILP. It also contains the
+synthetic-instance generators and the Virginia Beach case-study workflow.
 
 ## Cite
 
-If you use this code, please cite the associated manuscript and identify this
+If you use this code, please cite the associated paper and identify this
 repository by its commit hash. A permanent software citation will be added
 when the archival version is released.
 
 ```bibtex
+@misc{zhang2026exact,
+  author = {Zhang, Yun-Tian and Chen, Chen and Furini, Fabio and Ljubić, Ivana},
+  title = {An Exact Algorithm for the Max--Min Covering Location Blocker Problem},
+  year = {2026},
+  eprint = {2609.28084},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.28084}
+}
+
 @software{zhang2026bilevelmmclbp,
-  author = {Zhang, Yun-Tian and Furini, Fabio and Ljubić, Ivana and Chen, Chen},
+  author = {Zhang, Yun-Tian and Chen, Chen and Furini, Fabio and Ljubić, Ivana},
   title = {Bilevel-MMCLBP: Replication Code for the Max--Min Covering Location Blocker Problem},
   year = {2026},
   url = {https://github.com/Yuntian-Zhang/Bilevel-MMCLBP}

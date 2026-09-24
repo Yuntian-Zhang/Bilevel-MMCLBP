@@ -10,7 +10,7 @@ class MasterProblem:
 
         self.data = data
         if coefficient not in {"global", "nogood", "critical"}:
-            raise ValueError(f"Unknown value-function coefficient: {coefficient}")
+            raise ValueError(f"Unknown interdiction-cut coefficient: {coefficient}")
         self.coefficient = coefficient
 
         self.model = gp.Model("MasterProblem")

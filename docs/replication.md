@@ -25,7 +25,7 @@ all 65 synthetic instances for each selected follower method. Use
 `--method benders` or `--method milp` to run one method only. Each full run
 uses the supplied global time limit, 3,600 seconds by default.
 
-## Value-function coefficient ablation
+## Interdiction-cut coefficient ablation
 
 ```bash
 python3 scripts/reproduce_coefficient_ablation.py --quick

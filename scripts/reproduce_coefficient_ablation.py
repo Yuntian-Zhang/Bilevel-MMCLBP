@@ -1,4 +1,4 @@
-"""Regenerate the value-function-coefficient ablation experiment."""
+"""Regenerate the interdiction-cut coefficient ablation experiment."""
 
 import argparse
 import sys

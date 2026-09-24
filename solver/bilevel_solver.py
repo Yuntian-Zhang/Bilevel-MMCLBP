@@ -135,7 +135,7 @@ class BilevelSolver:
                 return self._return_incumbent_or_dummy()
 
             # ======================================================
-            # Step 3: check value-function violation
+            # Step 3: check whether the follower value exceeds the target
             # ======================================================
 
             violated = self._is_violated(t_val, sp_obj)
@@ -169,7 +169,7 @@ class BilevelSolver:
                 }
 
             # ======================================================
-            # Step 4: generate value-function inequality
+            # Step 4: generate interdiction cut
             # ======================================================
 
             cut_expr = self.master.generate_cut(
