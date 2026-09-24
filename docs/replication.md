@@ -45,6 +45,10 @@ python3 scripts/reproduce_virginia_beach.py --timelimit 3600
 
 See [Virginia Beach](virginia_beach.md) for data and parameter details.
 
+## Comparison with general-purpose bilevel solvers (Appendix A, Table 5)
+
+See [General-purpose solvers](general_purpose_solvers.md).
+
 ## From raw CSV to the tables of the paper
 
 The raw result CSVs contain all inputs, solution status, objective, bound, gap,

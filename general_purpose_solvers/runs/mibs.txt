@@ -1,0 +1,9 @@
+mmclbp_m10_n5000_s0       7          -   600.21     fail         -        0      835
+mmclbp_m10_n500_s0        6          6    55.91    match       670    29739    10669
+mmclbp_m10_n50_s0         4          4     1.25    match       308     4911     1393
+mmclbp_m15_n5000_s0       8          -   600.65     fail         -        0      180
+mmclbp_m15_n500_s0        7          -   600.17     fail         -        0    30370
+mmclbp_m15_n50_s0         6          6   120.25    match      6181   339933   125435
+mmclbp_m20_n5000_s0       8          -   600.49     fail         -        0       58
+mmclbp_m20_n500_s0        6          -   600.16     fail         -        0    20293
+mmclbp_m20_n50_s0         5          -   601.72     fail         -        0   361519

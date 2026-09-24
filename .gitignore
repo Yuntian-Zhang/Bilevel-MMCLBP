@@ -19,3 +19,12 @@ results/generated/
 .DS_Store
 .vscode/
 .idea/
+
+# Third-party bilevel solvers, CPLEX libraries and license files are never
+# distributed with this repository
+bilevel
+bilevelBinary/
+*.license
+libcplex*
+libconcert*
+libilocplex*

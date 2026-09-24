@@ -49,6 +49,7 @@ after installation.
 - [Replicating tables and result files](docs/replication.md)
 - [Virginia Beach case study](docs/virginia_beach.md)
 - [Validation](docs/validation.md)
+- [Comparison with general-purpose bilevel solvers](docs/general_purpose_solvers.md)
 
 ## Repository layout
 
@@ -59,6 +60,7 @@ scripts/    reproducible experiment entry points
 tests/      automated exactness tests
 docs/       detailed documentation
 results/    raw results reported in the paper (see results/results.md)
+general_purpose_solvers/  instances and scripts for the comparison of Appendix A
 ```
 
 ## Support

@@ -12,6 +12,7 @@ computational results of the paper
 | [Replication](replication.md) | Commands that regenerate result CSV files and tables |
 | [Virginia Beach](virginia_beach.md) | Data provenance and the case-study workflow |
 | [Validation](validation.md) | Automated tests and expected values |
+| [General-purpose solvers](general_purpose_solvers.md) | Comparison with HC++ and MibS, Appendix A |
 
 Start with [installation](installation.md), run the [validation](validation.md)
 checks, and then select the required replication workflow.

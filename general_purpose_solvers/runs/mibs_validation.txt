@@ -1,0 +1,17 @@
+instance                ref       mibs     time   status  VFsolved     cuts    nodes
+----------------------------------------------------------------------------
+valid_m10_n50_s0          4          4     1.17    match       308     4911     1393
+valid_m10_n50_s1          2          2     0.05    match        28       81        6
+valid_m10_n50_s2          3          3     0.77    match       172     3069      578
+valid_m5_n20_s0           4          4     0.04    match        28       81        -
+valid_m5_n20_s1           2          2     0.02    match        10       27        -
+valid_m5_n20_s2           2          2     0.03    match        13       36        6
+valid_m6_n25_s0           1          1     0.02    match         3        6        -
+valid_m6_n25_s1           4          4     0.06    match        54      159       47
+valid_m6_n25_s2           4          4     0.05    match        50      147       46
+valid_m7_n30_s0           2          2     0.04    match        28       81        9
+valid_m7_n30_s1           4          4     0.07    match        80      237       70
+valid_m7_n30_s2           5          5     0.12    match       116      402      131
+valid_m8_n40_s0           3          3     0.11    match       104      396       89
+valid_m8_n40_s1           4          4     0.15    match       138      411      103
+valid_m8_n40_s2           5          5     0.19    match       192      573      180
