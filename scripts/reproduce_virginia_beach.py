@@ -1,4 +1,4 @@
-"""Reproduce the Virginia Beach case study from the manuscript."""
+"""Reproduce the Virginia Beach case study of the paper."""
 
 import argparse
 import sys

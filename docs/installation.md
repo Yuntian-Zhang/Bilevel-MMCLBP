@@ -7,7 +7,7 @@
 - Gurobi Optimizer 13.x with an active license;
 - the Python packages listed in `requirements.txt`.
 
-The manuscript experiments used Gurobi 13.0.1. This package was validated with
+The experiments in the paper used Gurobi 13.0.1. This package was validated with
 Gurobi 13.0.3, NumPy 2.2.6, pybind11 3.1.0, and Python 3.10. Running times can
 vary across machines and solver versions; optimal objectives are the primary
 replication target.

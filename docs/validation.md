@@ -7,9 +7,10 @@ make test
 make smoke
 ```
 
-The `pytest` suite checks that the Benders follower equals the direct MILP
-follower for every blocker configuration of a small instance, and that the
-outer Benders algorithm matches complete blocker enumeration. `make smoke`
+The `pytest` suite checks that the follower value computed by branch-and-Benders-cut
+equals the one computed by the MILP for every blocker decision of a small
+instance, and that `OD+B&BC` matches complete enumeration of the blocker
+decisions. `make smoke`
 extends this comparison to three small random instances.
 
 The validation machine used Python 3.10, Gurobi 13.0.3, NumPy 2.2.6, and

@@ -18,7 +18,7 @@ Each seed deterministically regenerates the corresponding instance.
 
 The main benchmark contains 13 `(facilities, demands)` classes and five seeds
 per class. The first three seeds of the compact diagnostic classes have these
-expected Benders objectives:
+optimal blocker objectives:
 
 | Facilities | Demands | Seeds 0, 1, 2 |
 | ---: | ---: | --- |

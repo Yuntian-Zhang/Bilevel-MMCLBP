@@ -13,9 +13,7 @@ synthetic-instance generators and the Virginia Beach case-study workflow.
 
 ## Cite
 
-If you use this code, please cite the associated paper and identify this
-repository by its commit hash. A permanent software citation will be added
-when the archival version is released.
+If you use this code, please cite the paper:
 
 ```bibtex
 @misc{zhang2026exact,
@@ -25,13 +23,6 @@ when the archival version is released.
   eprint = {2609.28084},
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2609.28084}
-}
-
-@software{zhang2026bilevelmmclbp,
-  author = {Zhang, Yun-Tian and Chen, Chen and Furini, Fabio and Ljubić, Ivana},
-  title = {Bilevel-MMCLBP: Replication Code for the Max--Min Covering Location Blocker Problem},
-  year = {2026},
-  url = {https://github.com/Yuntian-Zhang/Bilevel-MMCLBP}
 }
 ```
 
@@ -45,8 +36,8 @@ python3 -m pip install -e .
 make smoke
 ```
 
-`make smoke` compares the Benders follower, the direct MILP follower, and
-brute-force enumeration on small instances. It is the recommended first check
+`make smoke` compares `OD+B&BC`, `OD+MILP`, and complete enumeration on
+small instances. It is the recommended first check
 after installation.
 
 ## Documentation
@@ -63,11 +54,11 @@ after installation.
 
 ```text
 data/       generators and case-study data
-solver/     outer master and follower implementations
+solver/     outer decomposition, relaxed master problem, and follower solvers
 scripts/    reproducible experiment entry points
 tests/      automated exactness tests
 docs/       detailed documentation
-results/    locally generated CSV outputs
+results/    raw results reported in the paper (see results/results.md)
 ```
 
 ## Support

@@ -1,7 +1,8 @@
 # Documentation
 
 This documentation describes how to install, validate, and reproduce the
-computational results in the accompanying MMCLBP study.
+computational results of the paper
+[arXiv:2609.28084](https://arxiv.org/abs/2609.28084).
 
 | Topic | Contents |
 | --- | --- |

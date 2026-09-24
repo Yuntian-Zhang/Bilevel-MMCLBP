@@ -25,8 +25,8 @@ Run the case study with:
 python3 scripts/reproduce_virginia_beach.py --timelimit 7200
 ```
 
-The script first obtains the unblocked follower value with the exact
-closed-form Benders follower, then sets `t = 0.7 D0` and solves the blocker
-problem. It checks that the unblocked value is approximately `1775.42` before
+The script first obtains the unblocked follower value with the
+branch-and-Benders-cut algorithm, then sets `t = 0.7 D0` and solves the blocker
+problem with `OD+B&BC`. It checks that the unblocked value is approximately `1775.42` before
 the blocker solve. Use `--skip-reference-check` only when deliberately using a
 different workbook or parameterization.

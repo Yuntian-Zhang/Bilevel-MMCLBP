@@ -13,7 +13,7 @@ make smoke
 This checks three small instances against brute-force enumeration. It should
 finish in seconds.
 
-## Main synthetic benchmark
+## Main synthetic benchmark (Section 5.2, Table 1 and Table EC.2)
 
 ```bash
 python3 scripts/reproduce_main_table.py --quick
@@ -21,11 +21,11 @@ python3 scripts/reproduce_main_table.py --full
 ```
 
 `--quick` executes the two compact classes with seeds 0–2. `--full` executes
-all 65 synthetic instances for each selected follower method. Use
-`--method benders` or `--method milp` to run one method only. Each full run
+all 65 synthetic instances for each selected method. Use
+`--method benders` (`OD+B&BC`) or `--method milp` (`OD+MILP`) to run one method only. Each full run
 uses the supplied global time limit, 3,600 seconds by default.
 
-## Interdiction-cut coefficient ablation
+## Interdiction-cut coefficients (Section 5.3, Table 2)
 
 ```bash
 python3 scripts/reproduce_coefficient_ablation.py --quick
@@ -34,9 +34,10 @@ python3 scripts/reproduce_coefficient_ablation.py
 
 The quick version runs the 20-by-20,000 diagnostic class. The full command
 runs the three diagnostic classes, seeds 0–2, and the `global`, `nogood`, and
-`critical` coefficient variants.
+`critical` coefficient variants. The paper reports `nogood` (No-good) and
+`critical` (Critical); `global` is an additional variant not reported there.
 
-## Case study
+## Virginia Beach case study (Section 5.6)
 
 ```bash
 python3 scripts/reproduce_virginia_beach.py --timelimit 3600
@@ -44,8 +45,10 @@ python3 scripts/reproduce_virginia_beach.py --timelimit 3600
 
 See [Virginia Beach](virginia_beach.md) for data and parameter details.
 
-## From raw CSV to manuscript tables
+## From raw CSV to the tables of the paper
 
 The raw result CSVs contain all inputs, solution status, objective, bound, gap,
 time, and Benders statistics. They are designed to be aggregated directly into
-the manuscript tables with a spreadsheet or a statistical script.
+the tables of the paper with a spreadsheet or a statistical script. The CSV
+files behind the tables of the paper are in `results/`; see
+[results/results.md](../results/results.md) for the correspondence.
